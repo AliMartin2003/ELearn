@@ -1,0 +1,26 @@
+﻿@model List<ELearn.DataLayer.Entities.CourseGroup>
+@{
+	Layout = "/Views/shared/_layout.cshtml";
+}
+<table class="table table-striped">
+	<tr>
+		<th>شناسه</th>
+		<th>نام گروه</th>
+		<th>وضعیت</th>
+	</tr>
+	@foreach(var cg in Model)
+	{
+		<tr>
+			<th>@cg.CourseGroupId</th>
+			<th>@cg.CourseGroupName</th>
+			@if(cg.IsDeleted)
+			{
+				<th class="text-danger">حذف شده</th>
+			}
+			else
+			{
+				<th class="text-success">فعال</th>
+			}
+		</tr>
+	}
+</table>

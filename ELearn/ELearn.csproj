@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ELearn.Core\ELearn.Core.csproj" />
     <ProjectReference Include="..\ELearn.DataLayer\ELearn.DataLayer.csproj" />
   </ItemGroup>
 

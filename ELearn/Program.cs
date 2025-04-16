@@ -1,3 +1,5 @@
+using ELearn.Core.Interfaces;
+using ELearn.Core.Services;
 using ELearn.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,8 @@ builder.Services.AddDbContext
     "Integrated Security=True;" +
     "MultipleActiveResultSets=True;")
     );
+
+builder.Services.AddScoped<ICourseGroup, CourseGroupServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
