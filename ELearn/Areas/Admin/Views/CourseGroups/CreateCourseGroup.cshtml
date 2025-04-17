@@ -1,0 +1,14 @@
+﻿@model ELearn.DataLayer.DTOS.CourseGroupViewModels.CreateCourseGroupViewModel
+@{
+	Layout = "/Views/shared/_layout.cshtml";
+}
+
+<form method="post">
+	<div>
+		<input class="form-controll mb-2" asp-for="CourseGroupName" />
+		<span asp-validation-for="CourseGroupName"></span>
+
+	</div>
+	<button class="btn btn-success btn-sm" type="submit">افزودن</button>
+
+</form>
