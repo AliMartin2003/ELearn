@@ -1,12 +1,27 @@
 ﻿@model List<ELearn.DataLayer.Entities.CourseGroup>
 @{
-	Layout = "/Views/shared/_layout.cshtml";
+	Layout = "/areas/admin/Views/shared/_Adminlayout.cshtml";
 }
+@if(TempData["Success"]!=null)
+{
+	<div class="alert alert-success">
+		@TempData["Success"]
+	</div>
+}
+@if(TempData["Error"]!=null)
+{
+	<div class="alert alert-danger">
+		@TempData["Error"]
+	</div>
+}
+
+	<a class="btn btn-success btn-sm" href="/admin/CourseGroups/CreateCourseGroup"><i class="bi bi-pencil-square"></i></a>
 <table class="table table-striped">
 	<tr>
 		<th>شناسه</th>
 		<th>نام گروه</th>
 		<th>وضعیت</th>
+		<th>عملیات</th>
 	</tr>
 	@foreach(var cg in Model)
 	{
@@ -21,6 +36,11 @@
 			{
 				<th class="text-success">فعال</th>
 			}
+			<th>
+			
+				<a href="/admin/CourseGroups/EditCourseGroup/@cg.CourseGroupId">ویرایش</a>
+				<a href="/admin/CourseGroups/DeleteCourseGroup/@cg.CourseGroupId">حذف</a>
+			</th>
 		</tr>
 	}
 </table>
