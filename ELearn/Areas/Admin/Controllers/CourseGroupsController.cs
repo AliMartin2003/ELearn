@@ -42,60 +42,11 @@ namespace ELearn.Areas.Admin.Controllers
             if (!await _courseGroupServices.CreateCourseGroup(courseGroup))
             {
                 TempData["Error"] = "عملیات با موفقیت شکست خورد !";
-                return Redirect("/Admin/CourseGroups/index");
+                return RedirectToAction("index");
             }
             TempData["Success"] = "عملیات با موفقیت پیروز شد !";
-            return Redirect("/Admin/CourseGroups/index");
+            return RedirectToAction("index");
 
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> EditCourseGroup(int id)
-        {
-            CourseGroup courseGroup = await _courseGroupServices.GetCourseGroupById(id);
-            if (courseGroup == null)
-            {
-                TempData["Error"] = "گروه یافت نشد";
-                return Redirect("/admin/CourseGroups");
-            }
-            EditCourseGroupViewModel edit = new EditCourseGroupViewModel
-            {
-                CourseGroupName = courseGroup.CourseGroupName,
-                Id = id
-            };
-            return View(edit);
-        }
-        [HttpPost]
-        public async Task<IActionResult> EditCourseGroup(EditCourseGroupViewModel edit)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(edit);
-            }
-            CourseGroup courseGroup = new CourseGroup
-            {
-                CourseGroupId = edit.Id,
-                CourseGroupName = edit.CourseGroupName,
-            };
-            if ( !await _courseGroupServices.UpdateCourseGroup(courseGroup))
-            {
-                TempData["Error"] = "عملیات با موفقیت شکست خورد";
-                return Redirect("/Admin/CourseGroups/index");
-            }
-            TempData["Success"] = "عملیات با موفقیت انجام شد";
-            return Redirect("/Admin/CourseGroups/index");
-        }
-
-        public async Task<IActionResult> DeleteCourseGroup(int id)
-		{
-			if (!await _courseGroupServices.DeleteCourseGroup(id))
-			{
-               
-                    TempData["Error"] = "عملیات با موفقیت شکست خورد";
-                    return Redirect("/Admin/CourseGroups/index");
-            }
-            TempData["Success"] = "عملیات با موفقیت انجام شد";
-            return Redirect("/Admin/CourseGroups/index");
         }
     }
 }

@@ -1,0 +1,65 @@
+﻿@model ELearn.DataLayer.DTOS.CreateCourseViewModel
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<h1>Create Course</h1>
+
+<form  enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="CourseTitle"></label>
+        <input asp-for="CourseTitle" class="form-control" />
+        <span asp-validation-for="CourseTitle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CourseThumbnail"></label>
+        <input asp-for="CourseThumbnail" type="file" class="form-control-file" />
+        <span asp-validation-for="CourseThumbnail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="IsFree" class="form-check-input" id="IsFreeCheckbox" />
+        <label asp-for="IsFree" class="form-check-label"></label>
+    </div>
+
+    <div class="form-group" id="priceGroup">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CourseDescription"></label>
+        <textarea asp-for="CourseDescription" class="form-control"></textarea>
+        <span asp-validation-for="CourseDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PublishDate"></label>
+        <input asp-for="PublishDate" type="datetime-local" class="form-control" />
+        <span asp-validation-for="PublishDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="IsPublished" class="form-check-input" />
+        <label asp-for="IsPublished" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const freeCheckbox = document.getElementById('IsFreeCheckbox');
+        const priceGroup = document.getElementById('priceGroup');
+        function togglePrice() {
+            priceGroup.style.display = freeCheckbox.checked ? 'none' : 'block';
+        }
+        freeCheckbox.addEventListener('change', togglePrice);
+        togglePrice();
+    </script>
+}

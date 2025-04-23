@@ -1,6 +1,247 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+Layout = "/areas/admin/Views/shared/_Adminlayout.cshtml";
 }
-<h1>به صفحه مدیریت خوش آمدید</h1>
+
+            <!-- Dashboard Content -->
+            <div class="container-fluid">
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted">مجموع فروش</h6>
+                                        <h4>۱۲,۴۵۰,۰۰۰ تومان</h4>
+                                    </div>
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted">گروه های محصول</h6>
+                                        <h4>@ViewBag.CourseGroupCounts</h4>
+                                    </div>
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted">مشتریان جدید</h6>
+                                        <h4>۱۵ مشتری</h4>
+                                    </div>
+                                    <i class="fas fa-users"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="text-muted">تعداد محصول</h6>
+                                        <h4>@ViewBag.CourseCounts</h4>
+                                    </div>
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Row -->
+                <div class="row">
+                    <!-- Products Carousel -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5>محصولات پرفروش</h5>
+                                <a href="#" class="btn btn-sm btn-primary">مشاهده همه</a>
+                            </div>
+                            <div class="card-body">
+                                <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">محصول ۱</h5>
+                                                            <p class="card-text text-muted">توضیحات کوتاه محصول</p>
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <span class="text-warning">۴.۵ <i class="fas fa-star"></i></span>
+                                                                <span class="fw-bold">۲۹۰,۰۰۰ تومان</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">محصول ۲</h5>
+                                                            <p class="card-text text-muted">توضیحات کوتاه محصول</p>
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <span class="text-warning">۴.۲ <i class="fas fa-star"></i></span>
+                                                                <span class="fw-bold">۳۵۰,۰۰۰ تومان</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">محصول ۳</h5>
+                                                            <p class="card-text text-muted">توضیحات کوتاه محصول</p>
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <span class="text-warning">۴.۸ <i class="fas fa-star"></i></span>
+                                                                <span class="fw-bold">۲۴۰,۰۰۰ تومان</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">محصول ۴</h5>
+                                                            <p class="card-text text-muted">توضیحات کوتاه محصول</p>
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <span class="text-warning">۴.۰ <i class="fas fa-star"></i></span>
+                                                                <span class="fw-bold">۴۱۰,۰۰۰ تومان</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">محصول ۵</h5>
+                                                            <p class="card-text text-muted">توضیحات کوتاه محصول</p>
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <span class="text-warning">۴.۷ <i class="fas fa-star"></i></span>
+                                                                <span class="fw-bold">۳۲۰,۰۰۰ تومان</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Product">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">محصول ۶</h5>
+                                                            <p class="card-text text-muted">توضیحات کوتاه محصول</p>
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <span class="text-warning">۴.۳ <i class="fas fa-star"></i></span>
+                                                                <span class="fw-bold">۲۸۰,۰۰۰ تومان</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#productsCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#productsCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>سفارشات اخیر</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex justify-content-between">
+                                            <span>سفارش #۱۲۵۴</span>
+                                            <span class="badge bg-warning">در حال پردازش</span>
+                                        </div>
+                                        <small class="text-muted">۲ ساعت پیش - ۲۹۰,۰۰۰ تومان</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex justify-content-between">
+                                            <span>سفارش #۱۲۵۳</span>
+                                            <span class="badge bg-success">تکمیل شده</span>
+                                        </div>
+                                        <small class="text-muted">۵ ساعت پیش - ۴۵۰,۰۰۰ تومان</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex justify-content-between">
+                                            <span>سفارش #۱۲۵۲</span>
+                                            <span class="badge bg-primary">ارسال شده</span>
+                                        </div>
+                                        <small class="text-muted">۱ روز پیش - ۱,۲۰۰,۰۰۰ تومان</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex justify-content-between">
+                                            <span>سفارش #۱۲۵۱</span>
+                                            <span class="badge bg-danger">لغو شده</span>
+                                        </div>
+                                        <small class="text-muted">۲ روز پیش - ۳۲۰,۰۰۰ تومان</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex justify-content-between">
+                                            <span>سفارش #۱۲۵۰</span>
+                                            <span class="badge bg-success">تکمیل شده</span>
+                                        </div>
+                                        <small class="text-muted">۲ روز پیش - ۵۸۰,۰۰۰ تومان</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>آمار فروش ماهانه</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="salesChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>توزیع فروش بر اساس دسته‌بندی</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="categoryChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

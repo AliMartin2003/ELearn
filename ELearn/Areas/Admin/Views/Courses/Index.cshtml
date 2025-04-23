@@ -1,0 +1,21 @@
+﻿@model List<ELearn.DataLayer.Entities.Course>
+
+<table class="table table-striped">
+	<tr>
+		<th>تصویر</th>
+		<th>شناسه</th>
+		<th>عنوان</th>
+
+	</tr>
+	@foreach (var c in Model)
+	{
+		<tr>
+			<th>
+				<img src="/Images/Courses/Thumbs/@c.CourseThumbnail">
+			</th>
+			<th>@c.CourseId</th>
+			<th>@c.CourseTitle</th>
+
+		</tr>
+	}
+</table>

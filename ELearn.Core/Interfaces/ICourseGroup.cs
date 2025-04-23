@@ -15,5 +15,7 @@ namespace ELearn.Core.Interfaces
         Task<CourseGroup> GetCourseGroupById(int id);
         Task<bool> UpdateCourseGroup(CourseGroup courseGroup);
         Task<bool> DeleteCourseGroup(int id);
+
+        Task<int> GetCourseGroupCounts();
     }
 }

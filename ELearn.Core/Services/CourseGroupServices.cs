@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ELearn.Core.Interfaces;
 using ELearn.DataLayer.Context;
 using ELearn.DataLayer.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ELearn.Core.Services
 {
@@ -52,6 +53,11 @@ namespace ELearn.Core.Services
                 return false;
             }
 
+        }
+
+        public async Task<int> GetCourseGroupCounts()
+        {
+            return await _context.Courses.CountAsync();
         }
 
         public async Task<CourseGroup> GetCourseGroupById(int id)

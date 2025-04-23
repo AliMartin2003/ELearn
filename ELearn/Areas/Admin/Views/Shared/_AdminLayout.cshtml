@@ -1,17 +1,113 @@
 ﻿<!DOCTYPE html>
-
-<html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/ELearn.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت فروشگاه</title>
+    <partial name="Styles.cshtml">
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img class="w-100" src="/images/KidShopLogo.png" />
+            </div>
+            <div class="sidebar-menu">
+                <a href="#" class="active"><i class="fas fa-home"></i>داشبورد</a>
+                <a href="#"><i class="fas fa-shopping-cart"></i>محصولات</a>
+                <a href="#"><i class="fas fa-list"></i>دسته‌بندی‌ها</a>
+                <a href="#"><i class="fas fa-users"></i>مشتریان</a>
+                <a href="#"><i class="fas fa-receipt"></i>سفارشات</a>
+                <a href="#"><i class="fas fa-chart-line"></i>آمار و گزارشات</a>
+                <a href="#"><i class="fas fa-cog"></i>تنظیمات</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="main-content">
+            <partial name="Navbar.cshtml" />
+            @RenderBody()
+            
+        </div>
     </div>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Custom JS -->
+    <script>
+        // Sidebar Toggle
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('sidebar-expanded');
+            document.getElementById('main-content').classList.toggle('main-content-expanded');
+        });
+
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sales Chart
+            const salesCtx = document.getElementById('salesChart').getContext('2d');
+            const salesChart = new Chart(salesCtx, {
+                type: 'line',
+                data: {
+                    labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
+                    datasets: [{
+                        label: 'فروش ماهانه (میلیون تومان)',
+                        data: [12, 19, 15, 22, 18, 25],
+                        backgroundColor: 'rgba(26, 115, 232, 0.2)',
+                        borderColor: 'rgba(26, 115, 232, 1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            rtl: true
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Category Chart
+            const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+            const categoryChart = new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['الکترونیک', 'پوشاک', 'خانه و آشپزخانه', 'کتاب', 'اسباب بازی'],
+                    datasets: [{
+                        data: [35, 25, 20, 10, 10],
+                        backgroundColor: [
+                            'rgba(26, 115, 232, 0.8)',
+                            'rgba(255, 109, 0, 0.8)',
+                            'rgba(66, 133, 244, 0.8)',
+                            'rgba(255, 145, 0, 0.8)',
+                            'rgba(26, 115, 232, 0.5)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            rtl: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

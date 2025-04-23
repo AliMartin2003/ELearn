@@ -17,6 +17,7 @@ builder.Services.AddDbContext
     );
 
 builder.Services.AddScoped<ICourseGroup, CourseGroupServices>();
+builder.Services.AddScoped<ICourse, CourseServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
