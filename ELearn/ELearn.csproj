@@ -26,4 +26,8 @@
     <ProjectReference Include="..\ELearn.DataLayer\ELearn.DataLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="images\NewFolder\" />
+  </ItemGroup>
+
 </Project>

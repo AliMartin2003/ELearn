@@ -32,10 +32,18 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="CourseGroupId"></label>
+        <input asp-for="CourseGroupId" class="form-control" />
+        <span asp-validation-for="CourseGroupId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
         <label asp-for="CourseDescription"></label>
         <textarea asp-for="CourseDescription" class="form-control"></textarea>
         <span asp-validation-for="CourseDescription" class="text-danger"></span>
     </div>
+
+    z
 
     <div class="form-group">
         <label asp-for="PublishDate"></label>

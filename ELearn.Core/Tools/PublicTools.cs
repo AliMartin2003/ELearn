@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Http;
 
 namespace ELearn.Core.Tools
 {
-    internal class PublicTools
+    public static class PublicTools
     {
 
-        public async Task<bool> SaveOriginalImageAsync(
+        public static async Task<bool> SaveOriginalImageAsync(
         IFormFile imageFile,
         string folderName,
         string fileNameWithoutExtension)
@@ -15,7 +15,7 @@ namespace ELearn.Core.Tools
             try
             {
 
-                var targetDir = Path.Combine(Directory.GetCurrentDirectory(),"images","Courses","org", folderName);
+                var targetDir = Path.Combine(Directory.GetCurrentDirectory(),"images", folderName, "org");
                 Directory.CreateDirectory(targetDir);
                 var extension = Path.GetExtension(imageFile.FileName);
                 var fullPath = Path.Combine(targetDir, fileNameWithoutExtension + extension);
@@ -31,7 +31,7 @@ namespace ELearn.Core.Tools
         }
 
 
-        public async Task<bool> SaveThumbnailImageAsync(
+        public static async Task<bool> SaveThumbnailImageAsync(
             IFormFile imageFile,
             string folderName,
             string fileNameWithoutExtension,
@@ -63,7 +63,7 @@ namespace ELearn.Core.Tools
             }
         }
 
-        private ImageCodecInfo GetEncoder(ImageFormat format)
+        private static ImageCodecInfo GetEncoder(ImageFormat format)
         {
             return ImageCodecInfo
                 .GetImageDecoders()

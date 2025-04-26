@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-
+using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 namespace ELearn.DataLayer.DTOS
 {
     // Models/CourseCreateViewModel.cs
-    using System;
-    using System.ComponentModel.DataAnnotations;
-    using Microsoft.AspNetCore.Http;
+   
 
     public class CreateCourseViewModel
     {
@@ -39,6 +39,10 @@ namespace ELearn.DataLayer.DTOS
 
         [Display(Name = "Published?")]
         public bool IsPublished { get; set; } = true;
+
+        [Required]
+        [Display(Name = "CourseGroupId")]
+        public int CourseGroupId { get; set; }
     }
 
 }

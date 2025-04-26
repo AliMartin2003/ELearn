@@ -28,6 +28,16 @@ namespace ELearn.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCourse(CreateCourseViewModel createCourseViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(createCourseViewModel);
+            }
+            if (!await _CourseServices.CreateCourse(createCourseViewModel))
+            {
+                TempData["Error"] = "عملیات با موفقیت شکست خورد";
+                return Redirect("/Admin/Home");
+            }
+            TempData["Success"] = "عملیات با موفقیت مفق شد";
             return Redirect("/Admin/Home");
         }
     }

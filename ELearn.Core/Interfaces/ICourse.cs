@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ELearn.DataLayer.DTOS;
 using ELearn.DataLayer.Entities;
 
 namespace ELearn.Core.Interfaces
@@ -11,5 +12,6 @@ namespace ELearn.Core.Interfaces
     {
         Task<int> GetCourseCounts();
         Task<List<Course>> GetCourses();
+        Task<bool> CreateCourse(CreateCourseViewModel createCourseViewModel);
     }
 }

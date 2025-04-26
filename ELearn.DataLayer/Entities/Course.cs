@@ -19,7 +19,7 @@ namespace ELearn.DataLayer.Entities
         public DateTimeOffset PublishDate { get; set; }
         public bool IsPublished { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
-
+        public int CourseGroupId { get; set; }
 
         #region Relations
         public CourseGroup CourseGroup { get; set; }

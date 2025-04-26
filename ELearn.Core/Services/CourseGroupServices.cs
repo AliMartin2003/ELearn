@@ -57,7 +57,7 @@ namespace ELearn.Core.Services
 
         public async Task<int> GetCourseGroupCounts()
         {
-            return await _context.Courses.CountAsync();
+            return await _context.CourseGroups.CountAsync();
         }
 
         public async Task<CourseGroup> GetCourseGroupById(int id)
