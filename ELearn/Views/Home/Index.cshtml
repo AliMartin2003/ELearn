@@ -2,7 +2,220 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">پرفروش‌ترین دوره‌ها</h2>
+                <p class="text-muted">محبوب‌ترین دوره‌های آموزشی نزد دانشجویان</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="badge bg-orange position-absolute" style="top: 10px; left: 10px;">پرفروش</div>
+                        <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="دوره برنامه نویسی">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-blue">توسعه وب</span>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i> 4.9 (120)
+                                </div>
+                            </div>
+                            <h5 class="card-title">دوره کامل React.js</h5>
+                            <p class="card-text">یادگیری React.js از مقدماتی تا پیشرفته با پروژه‌های عملی</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-success fw-bold">490,000 تومان</span>
+                                <a href="#" class="btn btn-sm btn-outline-blue">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="badge bg-orange position-absolute" style="top: 10px; left: 10px;">پرفروش</div>
+                        <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="دوره پایتون">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-blue">برنامه نویسی</span>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i> 4.8 (95)
+                                </div>
+                            </div>
+                            <h5 class="card-title">پایتون از صفر تا صد</h5>
+                            <p class="card-text">آموزش کامل پایتون برای مبتدیان و علاقه‌مندان به هوش مصنوعی</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-success fw-bold">650,000 تومان</span>
+                                <a href="#" class="btn btn-sm btn-outline-blue">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="badge bg-orange position-absolute" style="top: 10px; left: 10px;">پرفروش</div>
+                        <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="دوره طراحی رابط کاربری">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-blue">طراحی UI/UX</span>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i> 4.7 (85)
+                                </div>
+                            </div>
+                            <h5 class="card-title">طراحی رابط کاربری حرفه‌ای</h5>
+                            <p class="card-text">آموزش طراحی UI/UX با Figma و Adobe XD با پروژه‌های واقعی</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-success fw-bold">380,000 تومان</span>
+                                <a href="#" class="btn btn-sm btn-outline-blue">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-orange btn-lg">مشاهده همه دوره‌ها</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="py-5 bg-blue text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="12500">0</div>
+                        <h5>دانشجو</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="320">0</div>
+                        <h5>دوره آموزشی</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="85">0</div>
+                        <h5>استاد مجرب</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="98">0</div>
+                        <h5>رضایت کاربران</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://via.placeholder.com/600x400" alt="درباره آکادمی آنلاین" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">درباره آکادمی آنلاین</h2>
+                    <p class="lead">ما باور داریم که یادگیری باید برای همه در دسترس باشد</p>
+                    <p>آکادمی آنلاین با هدف ارائه آموزش‌های باکیفیت و مقرون به صرفه در سال ۱۳۹۵ تأسیس شد. ما با بهره‌گیری از اساتید مجرب و متدهای آموزشی نوین، سعی در ایجاد تجربه‌ای متفاوت از یادگیری آنلاین داریم.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check text-orange me-2"></i> دوره‌های جامع و پروژه‌محور</li>
+                        <li class="mb-2"><i class="fas fa-check text-orange me-2"></i> پشتیبانی و مشاوره تخصصی</li>
+                        <li class="mb-2"><i class="fas fa-check text-orange me-2"></i> مدرک معتبر پایان دوره</li>
+                        <li class="mb-2"><i class="fas fa-check text-orange me-2"></i> دسترسی مادام‌العمر به محتوا</li>
+                    </ul>
+                    <a href="#" class="btn btn-orange mt-3">بیشتر درباره ما</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us & Map -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="fw-bold">تماس با ما</h2>
+                <p class="text-muted">پرسش‌ها و پیشنهادهای خود را با ما در میان بگذارید</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">نام و نام خانوادگی</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">آدرس ایمیل</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">موضوع</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">پیام شما</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-orange">ارسال پیام</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body p-0">
+                            <div class="map-container" style="height: 100%; min-height: 300px;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.748241371339!2d51.38882131526984!3d35.68919798018591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQxJzIxLjEiTiA1McKwMjMnMjYuNiJF!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-orange text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5>آدرس</h5>
+                            <p class="mb-0">تهران، خیابان آزادی، دانشگاه تهران</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-orange text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5>تلفن تماس</h5>
+                            <p class="mb-0">۰۲۱-۱۲۳۴۵۶۷۸</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-orange text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5>ایمیل</h5>
+                            <p class="mb-0">info@academyonline.ir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

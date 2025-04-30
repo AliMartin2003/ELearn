@@ -1,0 +1,104 @@
+﻿:root {
+    --primary-dark: #121212;
+    --secondary-blue: #1A237E;
+    --accent-orange: #FF6D00;
+    --light-gray: #F5F5F5;
+}
+
+body {
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-dark-custom {
+    background-color: var(--primary-dark);
+}
+
+.bg-blue {
+    background-color: var(--secondary-blue);
+}
+
+.bg-orange {
+    background-color: var(--accent-orange);
+}
+
+.text-orange {
+    color: var(--accent-orange);
+}
+
+.btn-orange {
+    background-color: var(--accent-orange);
+    color: white;
+}
+
+    .btn-orange:hover {
+        background-color: #E65100;
+        color: white;
+    }
+
+.btn-outline-orange {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+}
+
+    .btn-outline-orange:hover {
+        background-color: var(--accent-orange);
+        color: white;
+    }
+
+.course-card {
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    .course-card:hover {
+        transform: translateY(-5px);
+    }
+
+.counter-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.counter-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-orange);
+}
+
+.carousel-caption {
+    right: 10%;
+    left: 10%;
+    bottom: 20%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-blue);
+    color: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+    .social-icon:hover {
+        background-color: var(--accent-orange);
+        transform: translateY(-3px);
+    }
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        bottom: 10%;
+    }
+
+        .carousel-caption h2 {
+            font-size: 1.5rem;
+        }
+}

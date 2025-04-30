@@ -1,44 +1,131 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-   <partial name="Styles.cshtml" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آکادمی آنلاین - آموزش مجازی</title>
+
+    <partial name="Styles.css" />
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ELearn</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://via.placeholder.com/40" alt="آکادمی آنلاین" class="me-2">
+                آکادمی آنلاین
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">دوره‌ها</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">وبلاگ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-orange me-2">ورود</a>
+                    <a href="#" class="btn btn-orange">ثبت نام</a>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
+    </nav>
+
+    <!-- Auto Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/1920x600" class="d-block w-100" alt="آموزش برنامه نویسی">
+                <div class="carousel-caption">
+                    <h2>یادگیری آنلاین با کیفیت</h2>
+                    <p class="d-none d-md-block">بهترین دوره‌های آموزشی را با اساتید مجرب تجربه کنید</p>
+                    <a href="#" class="btn btn-orange btn-lg mt-3">شروع یادگیری</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/1920x600" class="d-block w-100" alt="دوره‌های جدید">
+                <div class="carousel-caption">
+                    <h2>دوره‌های جدید منتشر شد</h2>
+                    <p class="d-none d-md-block">همین حالا در جدیدترین دوره‌ها ثبت نام کنید</p>
+                    <a href="#" class="btn btn-blue btn-lg mt-3">مشاهده دوره‌ها</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @RenderBody()
+
+
+    <footer class="bg-dark-custom text-white pt-5 pb-3">
         <div class="container">
-            &copy; 2025 - ELearn - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-orange mb-4">آکادمی آنلاین</h5>
+                    <p>ما با ارائه بهترین دوره‌های آموزشی آنلاین، مسیر یادگیری را برای شما هموار می‌کنیم. با اساتید مجرب و محتوای به‌روز، تجربه‌ای متفاوت از آموزش آنلاین خواهید داشت.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-orange mb-4">لینک‌های سریع</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">خانه</a></li>
+                        <li class="mb-2"><a href="#courses" class="text-white text-decoration-none">دوره‌ها</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">وبلاگ</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">درباره ما</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-orange mb-4">دسته‌بندی دوره‌ها</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">برنامه نویسی</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">توسعه وب</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">هوش مصنوعی</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">طراحی UI/UX</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">بازاریابی دیجیتال</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="text-orange mb-4">خبرنامه</h5>
+                    <p>برای دریافت جدیدترین دوره‌ها و تخفیف‌های ویژه در خبرنامه ما عضو شوید.</p>
+                    <form class="mt-4">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="آدرس ایمیل" required>
+                            <button class="btn btn-orange" type="submit">عضویت</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© ۱۴۰۲ آکادمی آنلاین. تمام حقوق محفوظ است.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">قوانین و مقررات</a>
+                    <a href="#" class="text-white text-decoration-none">حریم خصوصی</a>
+                </div>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+
+    
+    @RenderSection("Scripts",false)
+  
 </body>
 </html>
