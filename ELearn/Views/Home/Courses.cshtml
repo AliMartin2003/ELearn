@@ -1,0 +1,39 @@
+﻿@model List<ELearn.DataLayer.Entities.Course>
+<section id="courses" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="fw-bold">پرفروش‌ترین دوره‌ها</h2>
+            <p class="text-muted">محبوب‌ترین دوره‌های آموزشی نزد دانشجویان</p>
+        </div>
+        
+        <div class="row g-4">
+            @foreach(var course in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card course-card h-100">
+                        <div class="badge bg-orange position-absolute" style="top: 10px; left: 10px;">پرفروش</div>
+                        <img src="https://via.placeholder.com/400x225" class="card-img-top" alt="@course.CourseTitle">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-blue">@course.CourseGroup.CourseGroupName</span>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i> 4.9 (120)
+                                </div>
+                            </div>
+                            <h5 class="card-title">@course.CourseTitle</h5>
+                            <p class="card-text">@course.CourseDescription</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="text-success fw-bold">@course.Price تومان</span>
+                                <a href="#" class="btn btn-sm btn-outline-blue">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-orange btn-lg">مشاهده همه دوره‌ها</a>
+        </div>
+    </div>
+</section>
