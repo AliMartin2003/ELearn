@@ -1,10 +1,10 @@
 ﻿:root {
     --primary-blue: #1a73e8;
-    --secondary-blue: #4285f4;
+    --secondary-blue: #428f4;
     --light-blue: #e8f0fe;
     --primary-orange: #ff6d00;
     --secondary-orange: #ff9100;
-    --white: #ffffff;
+    --white: #fffff;
     --light-gray: #f8f9fa;
     --dark-gray: #5f6368;
 }
@@ -16,7 +16,7 @@ body {
 
 .sidebar {
     background-color: var(--white);
-    height: 100vh;
+    height: 10vh;
     position: fixed;
     width: 250px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -63,7 +63,7 @@ body {
     }
 
 .main-content {
-    margin-right: 250px;
+    marin-right: 250px;
     padding: 20px;
     transition: all 0.3s;
 }
